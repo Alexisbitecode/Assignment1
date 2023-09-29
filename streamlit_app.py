@@ -41,10 +41,6 @@ data = {
     'score': list(df3['math score'])+list(df3['reading score'])
 }
 df3 = pd.DataFrame(data)
-
-# Streamlit app title
-st.title('Barplot of Math and Reading Scores Colored by Lunch Type')
-
 # Create a barplot of math and reading scores colored by lunch type
 plt.figure(figsize=(8, 6))
 sns.barplot(x="subject", y="score", hue="lunch", data=df3)
@@ -52,6 +48,26 @@ plt.xlabel('Subject')
 plt.ylabel('Score')
 plt.title('Barplot of Math and Reading Scores Colored by Lunch Type')
 plt.legend(title='Lunch Type')
+
+# Display the plot in Streamlit
+st.pyplot(plt)
+st.write(""" From the bar plot, we can see that the average math and reading scores are higher for students who have a standard lunch. This makes quite a bit of sense since when students receive more nutrients, they tend to perform better in their studies.""")
+
+st.subheader("Gender")
+df4=df.groupby("gender")[["math score", "reading score"]].mean()
+data = {
+    'gender': list(df4.index)*2,
+    'subject': ['math', 'math', 'reading', 'reading'],
+    'score': list(df4['math score'])+list(df4['reading score'])
+}
+df4 = pd.DataFrame(data)
+# Create a barplot of math and reading scores colored by lunch type
+plt.figure(figsize=(8, 6))
+sns.barplot(x="subject", y="score", hue="lunch", data=df3)
+plt.xlabel('Subject')
+plt.ylabel('Score')
+plt.title('Barplot of Math and Reading Scores Colored by Gender')
+plt.legend(title='Gender')
 
 # Display the plot in Streamlit
 st.pyplot(plt)
