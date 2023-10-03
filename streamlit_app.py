@@ -73,9 +73,9 @@ plt.legend(title='Gender')
 st.pyplot(plt)
 st.write(""" From the bar plot, we can see that the average math and reading scores are higher for students who have a standard lunch. This makes quite a bit of sense since when students receive more nutrients, they tend to perform better in their studies.""")
 
+
 st.subheader("Race/ethnicity")
 df5=df.groupby("lunch")[["math score", "reading score"]].mean()
-
 # Create a Streamlit app
 st.title("Scatter Plot of Math Score vs. Reading Score (Colored by Race/Ethnicity)")
 
@@ -83,7 +83,7 @@ st.title("Scatter Plot of Math Score vs. Reading Score (Colored by Race/Ethnicit
 plt.figure(figsize=(10, 6))
 
 # Create the scatter plot
-sns.scatterplot(x="math score", y="reading score", hue="race/ethnicity", data=df)
+sns.scatterplot(x="math score", y="reading score", hue="race/ethnicity", data=df5)
 plt.xlabel("Math Score")
 plt.ylabel("Reading Score")
 plt.title("Scatter Plot of Math Score vs. Reading Score (Colored by Race/Ethnicity)")
