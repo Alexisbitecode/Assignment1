@@ -90,3 +90,15 @@ st.write("""
 We can see from the graph that students of group E race/ethnicity perform the best in both Math and reading tests.
 """)
 
+#Final Part
+st.subheader("Intersting Prediction")
+
+# Define the options for the dropdown
+options = ["Yes", "No"]
+
+# Create a dropdown select box
+selected_option = st.selectbox("Did you complete the Test Prepareation courses?:", options)
+
+# Display the selected option
+st.write("You tend to get a better grade")
+
