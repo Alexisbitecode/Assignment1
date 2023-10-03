@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns  # Add this import statement
+import seaborn as sns  
 
 st.write("""
 In this project, we will study the factors that affect students' reading and math scores, including parental level of education, test preparation course, lunch, gender, and race/ethnicity	
