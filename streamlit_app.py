@@ -74,15 +74,15 @@ st.write(""" From the bar plot, we can see that the average math and reading sco
 
 
 st.subheader("Race/ethnicity")
-df5=df.groupby("lunch")[["math score", "reading score"]].mean()
 # Set the figure size
 plt.figure(figsize=(10, 6))
 # Create the violin plot
-sns.violinplot(x="math score", y="reading score", hue="race/ethnicity", data=df, palette="Set1", split=True)
-plt.xlabel("Math Score")
-plt.ylabel("Reading Score")
-plt.title("Violin Plot of Math Score vs. Reading Score (Colored by Race/Ethnicity)")
+sns.violinplot(x="race/ethnicity", y="math score", hue="reading score", data=df, palette="Set1", split=True)
+plt.xlabel("Race/Ethnicity")
+plt.ylabel("Math Score")
+plt.title("Violin Plot of Math Score by Race/Ethnicity (Colored by Reading Score)")
 # Display the plot in Streamlit
 st.pyplot()
+
 
 
