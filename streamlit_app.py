@@ -72,18 +72,21 @@ axes[1].set_title("Violin Plot of Reading Scores by Gender")
 plt.tight_layout()
 # Display the plot in Streamlit
 st.pyplot(fig)
+st.write(""" From the violin plot, we can see that females tend to perform better than males in reading, while male students tend to outperform female students in math.""")
 
 
+#Fifth graph
 st.subheader("Race/ethnicity")
-# Set the figure size
-plt.figure(figsize=(10, 6))
-# Create the violin plot
-sns.violinplot(x="race/ethnicity", y="math score",data=df, palette="Set1", split=True)
-plt.xlabel("Race/Ethnicity")
-plt.ylabel("Math Score")
-plt.title("Violin Plot of Math Score by Race/Ethnicity (Colored by Reading Score)")
+df5 = df.groupby("race/ethnicity")[["math score", "reading score"]].mean()
+fig = plt.figure(figsize=(10, 6))
+sns.scatterplot(x="math score", y="reading score", hue="race/ethnicity", data=df5)
+plt.xlabel("Math Score")
+plt.ylabel("Reading Score")
+plt.title("Scatter Plot of Math Score vs. Reading Score (Colored by Race/ethnicity)")
 # Display the plot in Streamlit
-st.pyplot()
-
-
+st.pyplot(fig)
+# Make some comments
+st.write("""
+We can see from the graph that students of group E race/ethnicity perform the best in both Math and reading tests.
+""")
 
