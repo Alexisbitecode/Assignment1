@@ -77,7 +77,7 @@ st.subheader("Race/ethnicity")
 # Set the figure size
 plt.figure(figsize=(10, 6))
 # Create the violin plot
-sns.violinplot(x="race/ethnicity", y="math score", hue="reading score", data=df, palette="Set1", split=True)
+sns.violinplot(x="race/ethnicity", y="math score",data=df, palette="Set1", split=True)
 plt.xlabel("Race/Ethnicity")
 plt.ylabel("Math Score")
 plt.title("Violin Plot of Math Score by Race/Ethnicity (Colored by Reading Score)")
