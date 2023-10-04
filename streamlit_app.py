@@ -97,8 +97,10 @@ st.subheader("Intersting Prediction")
 options = ["Yes", "No"]
 
 # Create a dropdown select box
-selected_option = st.selectbox("Did you complete the Test Prepareation courses?:", options)
+selected_option = st.selectbox("Did you complete the Test Preparation courses?", options)
 
-# Display the selected option
-st.write("You tend to get a better grade")
-
+# Check the selected option and conditionally display a message
+if selected_option == "Yes":
+    st.write("You tend to get a better grade.")
+else:
+     st.write("Try to get more prepared so that you can get a better grade.")
